@@ -26,10 +26,10 @@ Parameters used:
 
     Loss function:  Cross entropy
     Optimizer:      Adam optimizer
-    Learning rate:  0.005
-    Keep prob.:     0.5
+    Learning rate:  0.001
+    Keep prob.:     0.4
     Epochs:         50
-    Batch size:     16
+    Batch size:     12
 
 ### Ouput
 
