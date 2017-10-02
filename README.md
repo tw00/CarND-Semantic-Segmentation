@@ -35,7 +35,7 @@ Parameters used:
 
 The trained model gives the following output:
 
-![Semantic Segmentation][img/result.png]
+![Semantic Segmentation](./img/result.png)
 
 
 ### Setup
