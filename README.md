@@ -10,21 +10,14 @@ The model is based on an architecture from [link](https://people.eecs.berkeley.e
 I am using a pre-trained VGG-16 network and replaced the final layer with a fully connected layer:
 
 ```python
-    layer7_conv_out = tf.layers.conv2d(vgg_layer7_out, num_classes, 1, padding = 'same' )
-
-    layer4_conv_decode1 = tf.layers.conv2d_transpose(layer7_conv_out, num_classes, 4, strides = (2, 2), padding = 'same' )
-
-    layer4_conv_decode2 = tf.layers.conv2d(vgg_layer4_out, num_classes, 1, padding='same' )
-
-    output_1 = tf.add(layer4_conv_decode1, layer4_conv_decode2)
-
-    layer3_conv_decode1 = tf.layers.conv2d_transpose(output_1, num_classes, 4, strides = (2, 2), padding='same' )
-
-    layer3_conv_decode2 = tf.layers.conv2d(vgg_layer3_out, num_classes, 1, padding='same' )
-
-    output_2 = tf.add(layer3_conv_decode1, layer3_conv_decode2)
-
-    output_3 = tf.layers.conv2d_transpose(output_2, num_classes, 16, strides=(8, 8), padding='same' )
+layer7_conv_out = tf.layers.conv2d(vgg_layer7_out, num_classes, 1, padding = 'same' )
+layer4_conv_decode1 = tf.layers.conv2d_transpose(layer7_conv_out, num_classes, 4, strides = (2, 2), padding = 'same' )
+layer4_conv_decode2 = tf.layers.conv2d(vgg_layer4_out, num_classes, 1, padding='same' )
+output_1 = tf.add(layer4_conv_decode1, layer4_conv_decode2)
+layer3_conv_decode1 = tf.layers.conv2d_transpose(output_1, num_classes, 4, strides = (2, 2), padding='same' )
+layer3_conv_decode2 = tf.layers.conv2d(vgg_layer3_out, num_classes, 1, padding='same' )
+output_2 = tf.add(layer3_conv_decode1, layer3_conv_decode2)
+output_3 = tf.layers.conv2d_transpose(output_2, num_classes, 16, strides=(8, 8), padding='same' )
 ```
 
 ### Parameters
@@ -33,10 +26,10 @@ Parameters used:
 
     Loss function:  Cross entropy
     Optimizer:      Adam optimizer
-    learning rate:  0.005
-    key-prob:       0.5
-    epoach:         50
-    batch:          16
+    Learning rate:  0.005
+    Keep prob.:     0.5
+    Epochs:         50
+    Batch size:     16
 
 ### Ouput
 
